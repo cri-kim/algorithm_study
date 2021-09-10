@@ -19,11 +19,11 @@
 - [프로젝트](https://github.com/cri-kim/build-knowledge-team/projects/1)를 자주 확인해주세요.
   - Issue 는 **To Do** 로 올라갑니다.
   - 함께 공부할 내용이 있다면 milestone을 정합니다.
-- 학습로그를 남겨주세요. (**[학습로그 작성법](https://github.com/cri-kim/build-knowledge-team/docs/studylog.md)**)
+- 학습로그를 남겨주세요. (**[학습로그 작성법](./docs/studylog.md)**)
 ## 주의사항👀
 - github
   - commit 시 메시지는 누구든지 이해할 수 있도록 작성해주세요.
-  - main 브랜치로 pull request를 해주세요. (**[Pull Request 주의사항](https://github.com/cri-kim/build-knowledge-team/docs/cleancode/pr_checklist.md)**)
+  - main 브랜치로 pull request를 해주세요. (**[Pull Request 주의사항]./docs/cleancode/pr_checklist.md)**)
   - merge는 매주 **월요일**에 진행됩니다.
   - 리뷰는 자유롭게 이루어질 수 있습니다.🤗 비방을 목적으로 리뷰를 작성하지 말아주세요.☹
 - folder
