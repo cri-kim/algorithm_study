@@ -23,7 +23,7 @@
 ## 주의사항👀
 - github
   - commit 시 메시지는 누구든지 이해할 수 있도록 작성해주세요.
-  - main 브랜치로 pull request를 해주세요. (**[Pull Request 주의사항](./docs/cleancode/pr_checklist.md)**, **[Pull Request 방법]**(./))
+  - main 브랜치로 pull request를 해주세요. (**[Pull Request 주의사항](./docs/cleancode/pr_checklist.md)**, **[Pull Request 방법](./docs/cleancode/pr.md)**)
   - merge는 매주 **월요일**에 진행됩니다.
   - 리뷰는 자유롭게 이루어질 수 있습니다.🤗 비방을 목적으로 리뷰를 작성하지 말아주세요.☹
 - folder
