@@ -6,32 +6,22 @@
  */
 var reorderLogFiles = function (logs) {
   const letterLogs = {}
-  const digitlogs = []
+  const digitLogs = []
   for (log of logs) {
     const letter = log.split(' ').splice(1).join('')
     // console.log(letter)
     if (/^\d+$/gi.test(letter)) {
-      digitlogs.push(log)
+      digitLogs.push(log)
     } else {
       letterLogs[log] = letter
     }
   }
 
-  //   const orderedLetterLogs = orderedObjectValueByKey(letterLogs)
-  const orderedLetterLogs = orderedObjectKeyByValue(letterLogs)
-  //   console.log(orderedObjectKeyByValue(letterLogs))
+  const orderedLetterLogs = orderedObjectValueByKey(letterLogs)
+  //   console.log(orderedLetterLogs)
 
-  return orderedLetterLogs.concat(digitlogs)
+  return orderedLetterLogs.concat(digitLogs)
 }
-
-const orderedObjectKeyByValue = (unordered) =>
-  Object.keys(unordered)
-    .sort()
-    .reduce((value, key) => {
-      value.push(key)
-      return value
-    }, [])
-    .sort()
 
 const orderedObjectValueByKey = (unordered) =>
   Object.keys(unordered)

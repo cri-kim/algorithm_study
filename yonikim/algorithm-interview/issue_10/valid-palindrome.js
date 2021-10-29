@@ -8,7 +8,7 @@ var isPalindrome = function (s) {
   const onlyLetters = []
 
   for (const str of strings) {
-    if (str.match(/[a-z0-9]/i)) {
+    if (str.match(/[\w]/gi)) {
       onlyLetters.push(str)
     }
   }
@@ -20,12 +20,6 @@ var isPalindrome = function (s) {
   return origin == reverse
 }
 
-// const s = "A man, a plan, a canal: Panama"
-const s = '0p'
+const s = '0p0'
 const result = isPalindrome(s)
 console.log(result)
-
-/*
-Palindrome 이란?
-앞에서부터 읽던, 뒤에서부터 읽던 같은 단어
-*/

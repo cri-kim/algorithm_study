@@ -7,7 +7,7 @@
 var mostCommonWord = function (paragraph, banned) {
   // 알파벳, 대소문자만 남겨두기 ([\w] = [0-9a-zA-Z])
   paragraph = paragraph.replace(/[^\w]/gi, ' ')
-  const regex = new RegExp(`\\b${banned.join('|')}\\b`, 'ig')
+  const regex = new RegExp(`\\b${banned.join('|')}\\b`, 'gi')
   // banned 배열에 있는 문자 제거
   paragraph = paragraph.toLowerCase().replace(regex, '')
   // 공백 문자 제거
