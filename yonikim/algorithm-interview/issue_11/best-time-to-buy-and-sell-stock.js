@@ -16,8 +16,18 @@ var maxProfit_TimeLimit = function (prices) {
   return max_price;
 };
 
-var maxProfit = function (prices) {};
+var maxProfit = function (prices) {
+  let min_price = Number.MAX_SAFE_INTEGER;
+  let profit = 0;
 
-const prices = [7, 6, 4, 3, 1];
+  for (price of prices) {
+    min_price = Math.min(price, min_price);
+    profit = Math.max(profit, price - min_price);
+  }
+
+  return profit;
+};
+
+const prices = [7, 1, 5, 3, 6, 4];
 const result = maxProfit(prices);
 console.log(result);

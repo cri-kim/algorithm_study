@@ -18,6 +18,9 @@ https://leetcode.com/problems/trapping-rain-water/
 
 https://leetcode.com/problems/3sum/
 
+- 풀이 1
+  Brute force
+
 ## 배열 파티션 I(array-partition-i)
 
 https://leetcode.com/problems/array-partition-i/
@@ -53,6 +56,15 @@ Array.prototype.slice()
 Array.prototype.reduce(previousValue, currentValue) => previousValue * currentValue
 ```
 
+- 풀이 2
+
+| array  | nums[0]           | nums[1]        | nums[2]       | nums[3]           |
+| ------ | ----------------- | -------------- | ------------- | ----------------- |
+| value  | 1                 | 2              | 3             | 4                 |
+| left   | 1                 | 1              | 1\*2          | 1\*2\*3           |
+| right  | 2\*3\*4           | 3\*4           | 4             | 1                 |
+| answer | (1)\*(2\*3\*4)=24 | (1)\*(3\*4)=12 | (1\*2)\*(4)=8 | (1\*2\*3)\*(1) =6 |
+
 ## 주식을 사고팔기 가장 좋은 시점(best-time-to-buy-and-sell-stock)
 
 https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
@@ -64,6 +76,14 @@ https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
 
 1. 인자로 받은 0개 이상의 숫자 중 가장 큰 숫자를 반환한다.
 
-```
+```JavaScript
 Math.max()
+```
+
+- 풀이 2
+
+1. 가장 큰 상수를 반환한다.
+
+```JavaScript
+Number.MAX_SAFE_INTEGER; // 9007199254740991
 ```
