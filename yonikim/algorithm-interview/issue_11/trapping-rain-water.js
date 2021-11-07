@@ -5,7 +5,7 @@
  */
 var trap = function (height) {
   if (!height) return 0;
-  // 투 포인트 방식 이용해야 할듯
+
   let volume = 0;
   let left = 0;
   let right = height.length - 1;

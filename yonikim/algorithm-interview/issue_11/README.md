@@ -5,6 +5,7 @@
 https://leetcode.com/problems/two-sum/
 
 - 풀이 1
+
   Brute force
 
 ## 빗물 트래핑(trapping-rain-water)
@@ -12,11 +13,16 @@ https://leetcode.com/problems/two-sum/
 https://leetcode.com/problems/trapping-rain-water/
 
 - 풀이 1
+
   Brute force
 
 ## 세 수의 합(3sum)
 
 https://leetcode.com/problems/3sum/
+
+- 풀이 1
+
+  Brute force
 
 ## 배열 파티션 I(array-partition-i)
 
@@ -40,11 +46,8 @@ const compareAsc = (nums) => {
 
 https://leetcode.com/problems/product-of-array-except-self/
 
-```JavaScript
-Array.prototype.slice()
-```
-
 - 풀이 1
+
   Brute force [Wrong Answer > 시간 초과]
 
 1. reduce 는 배열의 각 요소에 대해 callback 을 실행하여 단 1개의 값을 출력한다.
@@ -53,6 +56,21 @@ Array.prototype.slice()
 Array.prototype.reduce(previousValue, currentValue) => previousValue * currentValue
 ```
 
+2. 배열의 startIndex부터 endIndex(필수값 아님)에 대한 얕은 복사본을 만들어 새로운 배열 객체로 반환한다. 원본 배열은 바뀌지 않는다.
+
+```JavaScript
+Array.prototype.slice(startIndex, endIndex)
+```
+
+- 풀이 2
+
+| array  | nums[0]           | nums[1]        | nums[2]       | nums[3]           |
+| ------ | ----------------- | -------------- | ------------- | ----------------- |
+| value  | 1                 | 2              | 3             | 4                 |
+| left   | 1                 | 1              | 1\*2          | 1\*2\*3           |
+| right  | 2\*3\*4           | 3\*4           | 4             | 1                 |
+| answer | (1)\*(2\*3\*4)=24 | (1)\*(3\*4)=12 | (1\*2)\*(4)=8 | (1\*2\*3)\*(1) =6 |
+
 ## 주식을 사고팔기 가장 좋은 시점(best-time-to-buy-and-sell-stock)
 
 https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
@@ -60,10 +78,25 @@ https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
 #### [Wrong Answer]
 
 - 풀이 1
+
   Brute force [Wrong Answer > 시간 초과]
 
 1. 인자로 받은 0개 이상의 숫자 중 가장 큰 숫자를 반환한다.
 
+```JavaScript
+Math.max(1, 3, 2) // 3
 ```
-Math.max()
+
+- 풀이 2
+
+1. 가장 큰 상수를 반환한다.
+
+```JavaScript
+Number.MAX_SAFE_INTEGER; // 9007199254740991
+```
+
+2. 인자로 받은 0개 이상의 숫자 중 가장 작은 숫자를 반환한다.
+
+```JavaScript
+Math.max(1, 3, 2) // 1
 ```
