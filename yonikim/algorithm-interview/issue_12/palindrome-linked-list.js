@@ -15,8 +15,6 @@ const { ListNode } = require("./ListNode");
 var isPalindrome = function (head) {
   if (!head) return true;
 
-  const listNode = ListNode(head);
-
   const queue = [];
   let node = head;
   while (node) {
@@ -32,5 +30,5 @@ var isPalindrome = function (head) {
 };
 
 const head = [1, 2, 2, 1];
-const result = isPalindrome(head);
+const result = isPalindrome(ListNode(head));
 console.log(result);
