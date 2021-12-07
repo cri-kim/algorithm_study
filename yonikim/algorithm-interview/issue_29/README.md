@@ -54,4 +54,14 @@ const getCombinations = (array, selectNumber) => {
 
 ## [일정 재구성](https://leetcode.com/problems/reconstruct-itinerary/)
 
+1. 기준 문자열과 비교했을 때 비교 대상 문자열이 정렬상 전에 오는지, 후에 오는지 혹은 같은 순서에 배치되는지를 알려주는 숫자를 리턴한다.
+
+```JavaScript
+String.prototype.localeCompare()
+
+'a'.localeCompare('b'); // -1
+'b'.localeCompare('a'); // 1
+'b'.localeCompare('b'); // 0
+```
+
 ## [코스 스케줄](https://leetcode.com/problems/course-schedule/)
