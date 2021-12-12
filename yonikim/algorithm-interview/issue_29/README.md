@@ -50,6 +50,13 @@ const getCombinations = (array, selectNumber) => {
 
 ## [조합의 합](https://leetcode.com/problems/combination-sum/)
 
+깊이 우선 탐색 (DFS, Depth-First Search)
+
+- 하나의 정점으로부터 시작하여 차례대로 모든 정점들을 한 번씩 방문 하는 것
+- 자기 자신을 호출하는 순환 알고리즘의 형태를 가지고 있음
+- 전위 순회(Pre-Order Traversals)를 포함한 다른 형태의 트리 순회는 모두 DFS 의 한 종류
+- 그래프 탐색의 경우 어떤 노드를 방문했는지 여부를 반드시 검사해야 함
+
 ## [부분 집합](https://leetcode.com/problems/subsets/)
 
 ## [일정 재구성](https://leetcode.com/problems/reconstruct-itinerary/)
