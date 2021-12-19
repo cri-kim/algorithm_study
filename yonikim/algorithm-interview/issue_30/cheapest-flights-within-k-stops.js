@@ -8,11 +8,10 @@
  * @return {number}
  */
 var findCheapestPrice = function (n, flights, src, dst, k) {
-  // 인접 리스트 생성
   const adj = new Map();
-  for (let [frm, to, weight] of flights) {
-    if (adj.has(frm)) adj.get(frm).push([to, weight]);
-    else adj.set(frm, [[to, weight]]);
+  for (let [from, to, price] of flights) {
+    if (adj.has(from)) adj.get(from).push([to, price]);
+    else adj.set(from, [[to, price]]);
   }
 
   function dijkstra(start) {
@@ -25,7 +24,7 @@ var findCheapestPrice = function (n, flights, src, dst, k) {
     while (q.length) {
       let [here, cost, move] = q.shift();
 
-      if (move > K || !adj.get(here)) continue;
+      if (move > k || !adj.get(here)) continue;
 
       for (let [there, weight] of adj.get(here)) {
         let nextDist = cost + weight;
@@ -43,15 +42,15 @@ var findCheapestPrice = function (n, flights, src, dst, k) {
   return ans === Infinity ? -1 : ans;
 };
 
-const n = 3;
-const flights = [
-  [0, 1, 100],
-  [1, 2, 100],
-  [0, 2, 500],
-];
-const src = 0;
-const dst = 2;
-const k = 1;
+const n = 3,
+  flights = [
+    [0, 1, 100],
+    [1, 2, 100],
+    [0, 2, 500],
+  ],
+  src = 0,
+  dst = 2,
+  k = 0;
 
 const result = findCheapestPrice(n, flights, src, dst, k);
 console.log(result);
