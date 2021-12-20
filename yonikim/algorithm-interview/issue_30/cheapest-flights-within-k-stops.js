@@ -14,32 +14,30 @@ var findCheapestPrice = function (n, flights, src, dst, k) {
     else adj.set(from, [[to, price]]);
   }
 
-  function dijkstra(start) {
-    let q = [];
-    let dist = new Array(n).fill(Infinity);
+  let ans = dijkstra(n, adj, src, k);
+  return ans === Infinity ? -1 : ans;
+};
 
-    q.push([start, 0, 0]);
-    dist[start] = 0;
+const dijkstra = (n, adj, start) => {
+  const q = [];
+  const dist = new Array(n).fill(Infinity);
 
-    while (q.length) {
-      let [here, cost, move] = q.shift();
+  q.push([start, 0, 0]);
 
-      if (move > k || !adj.get(here)) continue;
+  while (q.length) {
+    const [here, cost, move] = q.shift();
 
-      for (let [there, weight] of adj.get(here)) {
-        let nextDist = cost + weight;
-        if (dist[there] > nextDist) {
-          dist[there] = nextDist;
-          q.push([there, nextDist, move + 1]);
-        }
+    if (move > k || !adj.get(here)) continue;
+
+    for (let [there, weight] of adj.get(here)) {
+      const nextDist = cost + weight;
+      if (dist[there] > nextDist) {
+        dist[there] = nextDist;
+        q.push([there, nextDist, move + 1]);
       }
     }
-
-    return dist[dst];
   }
-
-  let ans = dijkstra(src);
-  return ans === Infinity ? -1 : ans;
+  return dist[dst];
 };
 
 const n = 3,
@@ -50,7 +48,7 @@ const n = 3,
   ],
   src = 0,
   dst = 2,
-  k = 0;
+  k = 1;
 
 const result = findCheapestPrice(n, flights, src, dst, k);
 console.log(result);
