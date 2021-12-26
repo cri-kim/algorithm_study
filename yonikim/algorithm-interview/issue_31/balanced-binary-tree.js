@@ -11,4 +11,26 @@
  * @param {TreeNode} root
  * @return {boolean}
  */
-var isBalanced = function (root) {};
+var isBalanced = function (root) {
+  if (!root) return true;
+
+  // console.log(helper(root));
+  return helper(root) !== false;
+};
+
+const helper = (node) => {
+  if (!node) return 0;
+
+  const left = helper(node.left);
+  const right = helper(node.right);
+
+  if (left === false || right === false || Math.abs(left - right) > 1) {
+    return false;
+  }
+
+  return Math.max(left, right) + 1;
+};
+
+const root = [1, 2, 2, 3, 3, null, null, 4, 4];
+const result = isBalanced(root);
+console.log(result);

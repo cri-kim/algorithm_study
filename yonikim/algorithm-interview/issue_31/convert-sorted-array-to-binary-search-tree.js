@@ -11,4 +11,18 @@
  * @param {number[]} nums
  * @return {TreeNode}
  */
-var sortedArrayToBST = function (nums) {};
+var sortedArrayToBST = function (nums) {
+  if (nums.length < 1) return null;
+
+  const mid = Math.floor(nums.length / 2);
+  const node = new TreeNode(nums[mid]);
+
+  node.left = sortedArrayToBST(nums.slice(0, mid));
+  node.right = sortedArrayToBST(nums.slice(mid + 1));
+
+  return node;
+};
+
+const nums = [-10, -3, 0, 5, 9];
+const result = sortedArrayToBST(nums);
+console.log(result);

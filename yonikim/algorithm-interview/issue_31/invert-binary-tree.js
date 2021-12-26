@@ -11,4 +11,21 @@
  * @param {TreeNode} root
  * @return {TreeNode}
  */
-var invertTree = function (root) {};
+var invertTree = function (root) {
+  invert(root);
+  return root;
+};
+
+const invert = (node) => {
+  if (!node) return null;
+
+  const temp = node.left;
+  node.left = node.right;
+  node.right = temp;
+  invert(node.left);
+  invert(node.right);
+};
+
+const root = [4, 2, 7, 1, 3, 6, 9];
+const result = invertTree(root);
+console.log(root);
