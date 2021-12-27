@@ -11,4 +11,25 @@
  * @param {TreeNode} root
  * @return {number}
  */
-var minDiffInBST = function (root) {};
+var minDiffInBST = function (root) {
+  let previous = null;
+  let min = Number.MAX_SAFE_INTEGER;
+
+  const helper = (node) => {
+    if (!node) return;
+
+    helper(node.left);
+    if (previous !== null) {
+      min = Math.min(min, node.val - previous);
+    }
+    previous = node.val;
+    helper(node.right);
+  };
+
+  helper(root);
+  return min;
+};
+
+const root = [4, 2, 6, 1, 3];
+const result = minDiffInBST(root);
+console.log(result);
